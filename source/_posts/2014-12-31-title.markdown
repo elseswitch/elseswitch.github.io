@@ -1,10 +1,5 @@
 ---
-layout: post
-title: "接入OpenIAB支付"
-date: 2014-12-31 10:00:06 +0800
-comments: true
-
-终于做完了OpenIAB的支付的接入，目前已接googleplay,yandex,amazon这三个平台。期间碰到了各种问题。记录一下。同事非常感谢OpenIAB的作者，他们的私让这个事情简单了很多。
+终于做完了OpenIAB的支付的接入，目前已接googleplay,yandex,amazon这三个平台。期间碰到了各种问题。记录一下。非常感谢OpenIAB的作者。
 ## googleplay
 * 必须连接VPN打开商店，必须在商店里可以看到收费应用。如果看不到可以清除一下缓存重新打开商店看看，但已不是每次都能成功。至今不知道google是如何认定你所在地区的。
 * 不能使用debug版本测试正式商品的购买，只有google提供测试的那几个ID可以使用debug版本。否则会提示此版本应用不支持应用内购买。
