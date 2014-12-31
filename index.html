@@ -5,11 +5,14 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>My Octopress Blog</title>
-  <meta name="author" content="Your Name">
+  <title></title>
+  <meta name="author" content="elseswitch">
 
   
-  <meta name="description" content=" Blog Archives Recent Posts ">
+  <meta name="description" content="layout: post
+title: &ldquo;接入OpenIAB支付&rdquo;
+date: 2014-12-31 10:00:06 +0800
+comments: true 终于做完了OpenIAB的支付的接入，目前已接googleplay,yandex,amazon这三个平台。 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,17 +21,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://elseswitch.github.io">
+  <link rel="canonical" href="http://elseswitch.github.io/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
-  <link href="/atom.xml" rel="alternate" title="My Octopress Blog" type="application/atom+xml">
   <script src="/javascripts/modernizr-2.0.js"></script>
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-  <script>!window.jQuery && document.write(unescape('%3Cscript src="/javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/ender.js"></script>
   <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="" type="application/atom+xml">
   <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
-<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
-<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
 
   
 
@@ -36,9 +38,9 @@
 
 <body   >
   <header role="banner"><hgroup>
-  <h1><a href="/">My Octopress Blog</a></h1>
+  <h1><a href="/"></a></h1>
   
-    <h2>A blogging framework for hackers.</h2>
+    <h2>Enjoy it.</h2>
   
 </hgroup>
 
@@ -50,7 +52,7 @@
   
 <form action="https://www.google.com/search" method="get">
   <fieldset role="search">
-    <input type="hidden" name="sitesearch" value="elseswitch.github.io">
+    <input type="hidden" name="q" value="site:elseswitch.github.io" />
     <input class="search" type="text" name="q" results="0" placeholder="Search"/>
   </fieldset>
 </form>
@@ -66,6 +68,81 @@
       <div class="blog-index">
   
   
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/12/31/title/">Title</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-12-31T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><hr />
+
+<p>layout: post
+title: &ldquo;接入OpenIAB支付&rdquo;
+date: 2014-12-31 10:00:06 +0800
+comments: true</p>
+
+<p>终于做完了OpenIAB的支付的接入，目前已接googleplay,yandex,amazon这三个平台。期间碰到了各种问题。记录一下。同事非常感谢OpenIAB的作者，他们的私让这个事情简单了很多。</p>
+
+<h2>googleplay</h2>
+
+<ul>
+<li>必须连接VPN打开商店，必须在商店里可以看到收费应用。如果看不到可以清除一下缓存重新打开商店看看，但已不是每次都能成功。至今不知道google是如何认定你所在地区的。</li>
+<li>不能使用debug版本测试正式商品的购买，只有google提供测试的那几个ID可以使用debug版本。否则会提示此版本应用不支持应用内购买。</li>
+<li>使用debug版本的时候，无法从googleplay获取商品列表，后来发现是debug设置的包名与正式版不一致导致的。</li>
+<li>googleplayV2版把所有的商品都是管理类商品，这意味着在控制台将物品类型设置为消耗类实际是无效的。我们游戏里只有一种类型的商品，就是消耗类的，购买流程是提交支付&ndash;支付成功&ndash;提交消耗-消耗成功-提交给web服务器，web服务器验证，提交给游戏服务器，游戏服务器添加游戏类对应商品。</li>
+<li>在开发者控制台需要注意的地方，添加的商品必须为active状态；游戏必须提交到alpha test或者beta test,必须为publish状态不能是草稿状态；必须把测试帐号添加到设置里面的test account里。
+
+<h2>yandex</h2></li>
+<li>yandex和googleplay保持了完全一样的逻辑，googleplay接入成功后，yandex也会完全OK。yandex无需翻墙也让问题容易了很多。</li>
+<li>手机上需要安装yandex.store.</li>
+<li>开发者控制台需要添加测试帐号，添加测试商品，上传应用，无需publish即可测试支付。</li>
+<li>安装的时候需要使用adb install -i com.yandex.store yourapk,以便openIAB选择正确的billingservice.
+
+<h2>amazon</h2></li>
+<li>amazon的支付和googleplay以及yandex有很大不同。首先添加商品的时候可以将物品设置为消耗类而且是有效的。amazon在购买成功后会自动将这种类型的商品消耗掉。不需要像上面两个store一样提交消耗请求。另外，amamon的测试环境都是在本地搭建的，手机端需要安装app tester,web端也需要搭建一个模拟测试环境。貌似只有本地支付测试通过然后publish才会通过amazon审核。</li>
+<li>遇到一个地方坑了两天时间，在openIAB的官方wiki和amazon的官方文档中，均提到采用app sdk tester进行测试，但实际测试中发现获取到尚品列表，后来到amamzon开发论坛才找到如下解释。&#8221;Please uninstall the SDK tester from your device. Only Amazon App Tester Should be installed in the device when you are testing IAP V2 in sandbox in your app. Thanks. &ldquo;.</li>
+<li>由于amazon的消耗类商品不需要提交消耗，所以客户端需要针对amazon的支付特殊处理，在支付成功后就可以提交web服务器了。</li>
+</ul>
+
+
+<p>总结下来，浪费很多时间主要是这几个原因：</p>
+
+<ul>
+<li>googleplay中国地区的不支持。花了很多时间处理连接问题。</li>
+<li>我们游戏是采用flash air开发，都需要添加ane才能接入支付，开发调试ane都比较蛋疼。</li>
+<li>首先要看官方的接入文档，然后再看其他总结，不然你会碰到各种坑。</li>
+<li>英文不够好，很多问题都只有英文资料。有时候需要看很多遍才能理解，google翻译并不靠谱。</li>
+</ul>
+
+</div>
+  
+  
+
+
+    </article>
+  
   <div class="pagination">
     
     <a href="/blog/archives">Blog Archives</a>
@@ -77,6 +154,10 @@
     <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2014/12/31/title/">Title</a>
+      </li>
     
   </ul>
 </section>
@@ -91,8 +172,10 @@
     </div>
   </div>
   <footer role="contentinfo"><p>
-  Copyright &copy; 2014 - Your Name -
+  Copyright &copy; 2014 - elseswitch -
   <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+  - <span class="credit">Theme by <a href="http://www.gehaxelt.in">Gehaxelt</a></span>
+  <span class="credit">and <a href="http://www.it-solutions-neef.de">IT Solutions Neef</a></span>
 </p>
 
 </footer>
@@ -109,7 +192,7 @@
       var twitterWidgets = document.createElement('script');
       twitterWidgets.type = 'text/javascript';
       twitterWidgets.async = true;
-      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
       document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
     })();
   </script>
