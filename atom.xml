@@ -4,7 +4,7 @@
   <title><![CDATA[]]></title>
   <link href="http://elseswitch.github.io/atom.xml" rel="self"/>
   <link href="http://elseswitch.github.io/"/>
-  <updated>2014-12-31T17:34:15+08:00</updated>
+  <updated>2015-01-01T09:55:31+08:00</updated>
   <id>http://elseswitch.github.io/</id>
   <author>
     <name><![CDATA[elseswitch]]></name>
@@ -20,12 +20,7 @@
     <id>http://elseswitch.github.io/blog/2014/12/31/title</id>
     <content type="html"><![CDATA[<hr />
 
-<p>layout: post
-title: &ldquo;接入OpenIAB支付&rdquo;
-date: 2014-12-31 10:00:06 +0800
-comments: true</p>
-
-<p>终于做完了OpenIAB的支付的接入，目前已接googleplay,yandex,amazon这三个平台。期间碰到了各种问题。记录一下。同事非常感谢OpenIAB的作者，他们的私让这个事情简单了很多。</p>
+<p>终于做完了OpenIAB的支付的接入，目前已接googleplay,yandex,amazon这三个平台。期间碰到了各种问题。记录一下。非常感谢OpenIAB的作者。</p>
 
 <h2>googleplay</h2>
 
