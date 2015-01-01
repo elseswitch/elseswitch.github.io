@@ -1,0 +1,16 @@
+---
+layout: post
+title: "Flash ane的一点总结"
+date: 2015-01-01 10:04:43 +0800
+comments: true
+项目很多地方用到了ane,之前用的都是他们从网上找的现成的，只需要按照作者的说明添加到项目中就可以了。这次接平台支付，本来也打算直接用别人写好的ane,但中间遇到了很多问题，由于没法调试，很多问题只能靠猜或者一遍一遍的查各种资料。后来花时间研究下ane的制作，在后面接openIAB的时候帮助很大。可以debug代码与之前真是天壤之别。
+ane制作看了很多资料，帮助最大的就是下面这两篇文章了：
+http://tmtbe.blog.163.com/blog/static/3965819420144911379481/
+http://tmtbe.blog.163.com/blog/static/3965819420144128244510/
+详细教程也是文章中提供的一个链接：
+http://www.adobe.com/cn/devnet/air/articles/ane-android-devices.html
+真心感谢他们。
+另外还有一些需要注意的地方：
+
+* JDK必须使用1.6.x的版本，如果使用1.7.x会出错。
+* 打包用的flexsdk，参考adobe那篇教程设置的，没有实验过airsdk是否可行。
