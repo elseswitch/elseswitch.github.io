@@ -4,7 +4,7 @@
   <title><![CDATA[]]></title>
   <link href="http://elseswitch.github.io/atom.xml" rel="self"/>
   <link href="http://elseswitch.github.io/"/>
-  <updated>2015-01-01T09:55:31+08:00</updated>
+  <updated>2015-01-01T11:09:26+08:00</updated>
   <id>http://elseswitch.github.io/</id>
   <author>
     <name><![CDATA[elseswitch]]></name>
@@ -14,10 +14,38 @@
 
   
   <entry>
-    <title type="html"><![CDATA[Title]]></title>
-    <link href="http://elseswitch.github.io/blog/2014/12/31/title/"/>
+    <title type="html"><![CDATA[Flashane的一点总结]]></title>
+    <link href="http://elseswitch.github.io/blog/2015/01/01/Flashane%E7%9A%84%E4%B8%80%E7%82%B9%E6%80%BB%E7%BB%93/"/>
+    <updated>2015-01-01T00:00:00+08:00</updated>
+    <id>http://elseswitch.github.io/blog/2015/01/01/Flashane的一点总结</id>
+    <content type="html"><![CDATA[<hr />
+
+<p>layout: post
+title: &ldquo;Flash ane的一点总结&rdquo;
+date: 2015-01-01 10:04:43 +0800
+comments: true
+项目很多地方用到了ane,之前用的都是他们从网上找的现成的，只需要按照作者的说明添加到项目中就可以了。这次接平台支付，本来也打算直接用别人写好的ane,但中间遇到了很多问题，由于没法调试，很多问题只能靠猜或者一遍一遍的查各种资料。后来花时间研究下ane的制作，在后面接openIAB的时候帮助很大。可以debug代码与之前真是天壤之别。
+ane制作看了很多资料，帮助最大的就是下面这两篇文章了：
+<a href="http://tmtbe.blog.163.com/blog/static/3965819420144911379481/">http://tmtbe.blog.163.com/blog/static/3965819420144911379481/</a>
+<a href="http://tmtbe.blog.163.com/blog/static/3965819420144128244510/">http://tmtbe.blog.163.com/blog/static/3965819420144128244510/</a>
+详细教程也是文章中提供的一个链接：
+<a href="http://www.adobe.com/cn/devnet/air/articles/ane-android-devices.html">http://www.adobe.com/cn/devnet/air/articles/ane-android-devices.html</a>
+真心感谢他们。
+另外还有一些需要注意的地方：</p>
+
+<ul>
+<li>JDK必须使用1.6.x的版本，如果使用1.7.x会出错。</li>
+<li>打包用的flexsdk，参考adobe那篇教程设置的，没有实验过airsdk是否可行。</li>
+</ul>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Openiab接入支付]]></title>
+    <link href="http://elseswitch.github.io/blog/2014/12/31/OpenIAB%E6%8E%A5%E5%85%A5%E6%94%AF%E4%BB%98/"/>
     <updated>2014-12-31T00:00:00+08:00</updated>
-    <id>http://elseswitch.github.io/blog/2014/12/31/title</id>
+    <id>http://elseswitch.github.io/blog/2014/12/31/OpenIAB接入支付</id>
     <content type="html"><![CDATA[<hr />
 
 <p>终于做完了OpenIAB的支付的接入，目前已接googleplay,yandex,amazon这三个平台。期间碰到了各种问题。记录一下。非常感谢OpenIAB的作者。</p>
