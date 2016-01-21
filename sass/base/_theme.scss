@@ -75,12 +75,19 @@ html {
   background: $page-bg image-url('line-tile.png') top left;
 }
 body {
+<<<<<<< HEAD
   
   > #main {
     background: $sidebar-bg $noise-bg;
     border-bottom: 1px solid $page-border-bottom;
     
     > #content {
+=======
+  > div {
+    background: $sidebar-bg $noise-bg;
+    border-bottom: 1px solid $page-border-bottom;
+    > div {
+>>>>>>> 5caf0bca84736af346ee0ab761dd1739f0d4f116
       background: $main-bg $noise-bg;
       border-right: 1px solid $sidebar-border;
     }

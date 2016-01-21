@@ -3,11 +3,17 @@
 # ----------------------- #
 
 url: http://elseswitch.github.io
+<<<<<<< HEAD
 title: My Octopress Blog
 subtitle: A blogging framework for hackers.
 author: Your Name
+=======
+title: elseswitch blog
+subtitle: Enjoy coding
+author: elseswitch
+>>>>>>> 5caf0bca84736af346ee0ab761dd1739f0d4f116
 simple_search: https://www.google.com/search
-description:
+description: 
 
 # Default date format is "ordinal" (resulting in "July 22nd 2007")
 # You can customize the format as defined in
